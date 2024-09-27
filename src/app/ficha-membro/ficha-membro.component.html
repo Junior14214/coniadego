@@ -1,0 +1,71 @@
+
+<div class="container" style="font-family: Poppins-Light">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card"  id="content" #content>
+        <div class="card-header" style="color: #ffff">
+          Ficha Cadastral
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <!-- <div class="col-md-4 text-center">
+              <img src="https://via.placeholder.com/150" alt="Foto do Perfil" class="profile-img">
+            </div> !-->
+            <div class="col-md-6">
+              <div class="info-label">Nome Completo:</div>
+              <div class="info-value">{{ membro.nome }}</div>
+              <div class="info-label">N° ROL:</div>
+              <div class="info-value">{{ membro.rol }}</div>
+              <div class="info-label">Data de Nascimento:</div>
+              <div class="info-value">{{ membro.data_nascimento }}</div>
+              <div class="info-label">Estado Civil:</div>
+              <div class="info-value">{{ membro.estado_civil.nome }}</div>
+            </div>
+            <div class="col-md-6">
+              <div class="info-label">CPF:</div>
+              <div class="info-value">{{ membro.cpf }}</div>
+              <div class="info-label">RG:</div>
+              <div class="info-value">{{ membro.rg }}</div>
+              <div class="info-label">Email:</div>
+              <div class="info-value">{{ membro.email }}</div>
+              <div class="info-label">Telefone:</div>
+              <div class="info-value">{{ membro.telefone }}</div>
+            </div>
+          </div>
+          <div class="row">
+            <!-- <div class="col-md-4 text-center">
+              <img src="https://via.placeholder.com/150" alt="Foto do Perfil" class="profile-img">
+            </div> !-->
+            <div class="col-md-6">
+              <div class="info-label">Nome da Mãe:</div>
+              <div class="info-value">{{ membro.nome_mae }}</div>
+              <div class="info-label">Nome do Pai:</div>
+              <div class="info-value">{{ membro.nome_pai }}</div>
+              <div class="info-label">Nome do Cônjuje:</div>
+              <div class="info-value">{{ membro.nome_conjuje }}</div>
+              <div class="info-label">Data de Nascimento Cônjuje:</div>
+              <div class="info-value">{{ membro.data_nascimento_conjuje }}</div>
+            </div>
+            <div class="col-md-6">
+              <div class="info-label">Nacionalidade:</div>
+              <div class="info-value">{{ membro.nacionalidade }}</div>
+              <div class="info-label">Naturalidade:</div>
+              <div class="info-value">{{ membro.naturalidade }}</div>
+              <div class="info-label">Cargo:</div>
+              <div class="info-value">{{ membro.cargo.nome }}</div>
+              <div class="info-label">Situação:</div>
+              <div class="info-value">{{ membro.situacao.nome }}</div>
+            </div>
+          </div>
+          <!-- <hr>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="info-label">Informações Adicionais:</div>
+              <div class="info-value">{{ membro.historico}}</div>
+            </div>
+          </div> !-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

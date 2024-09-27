@@ -1,0 +1,40 @@
+<app-alert></app-alert>
+
+<ul class="nav nav-underline" style="margin-top: 20px;">
+    <li class="nav-item">
+        <a class="nav-link" aria-current="page" style="cursor: pointer;" (click)="redirect()">Cadastro</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active">Histórico</a>
+    </li>
+</ul>
+
+<div class="container-fluid" style="background-color: #fff; font-family: Poppins-Light">
+
+    <div class="container mt-5 ">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="timeline">
+                    <!-- Item da linha do tempo -->
+
+                    <div class="timeline-item" *ngFor="let historico of this.membroModel.historico">
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title"><i class="fas " [ngClass]="{'fa-user' : historico.tipo_historico.codigo == 1, 'fa-user-plus' : historico.tipo_historico.codigo == 2, 'fa-user-slash' : historico.tipo_historico.codigo == 3 || historico.tipo_historico.codigo == 4, 'fa-info' : historico.tipo_historico.codigo == 5, 'fa-church' : historico.tipo_historico.codigo == 6}"
+                                        style="color: #bce1ff;"></i>{{historico.tipo_historico.nome}}</h4>
+                                <p><small class="text-muted"><i class="fa fa-clock-o"></i> {{historico.createdAt}}</small></p>
+                            </div>
+                            <div class="timeline-body">
+                                <p *ngIf="historico.tipo_historico.codigo != 5">{{historico.historico}}</p>
+                                <p style="font-size: 11px;" *ngIf="historico.observacao">Obs: {{historico.observacao}}</p>
+                            </div>
+                        </div>
+                        <hr style="color: #bdbdbd; width: 20rem;">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

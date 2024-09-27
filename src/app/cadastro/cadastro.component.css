@@ -1,0 +1,58 @@
+.container-fluid {
+    background-color: #fff;
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 20px
+}
+
+@font-face {
+    font-family: Poppins-Light;
+    src: url('../../assets/fonts/poppins/Poppins-Light.ttf');
+}
+
+.labelInput {
+  font-family: Poppins-Light;
+}
+
+.nav-link.active {
+    color: #6c757d;
+}
+
+.nav-link {
+    color: #6c757d;
+}
+
+.camera-container {
+    position: relative;
+    width: 150px;
+    /* Ajuste conforme necessário */
+    height: 150px;
+    /* Ajuste conforme necessário */
+}
+
+.camera-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    /* Inicialmente, torna o botão invisível */
+    transition: opacity 0.3s ease;
+    /* Adiciona uma transição suave de opacidade */
+}
+
+.camera-button img {
+    width: 50px;
+    /* Ajuste conforme necessário */
+    height: 50px;
+    /* Ajuste conforme necessário */
+    cursor: pointer;
+}
+
+.camera-container:hover .camera-button {
+    opacity: 1;
+}
+
+.labelInput {
+    padding-left: 20px !important;
+}

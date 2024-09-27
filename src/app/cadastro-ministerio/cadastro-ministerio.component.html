@@ -1,0 +1,143 @@
+<app-alert></app-alert>
+
+<ul class="nav nav-underline" style="margin-top: 20px;" *ngIf="exibirAba">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" [routerLink]="[ '/cadastro/membros']">Cadastro</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="redirect()" style="cursor: pointer;">Histórico</a>
+  </li>
+</ul>
+
+<form class="container-fluid" style="background-color: #fff; font-family: Poppins-Light" [formGroup]="form"
+      (ngSubmit)="cadastrar()">
+  <div class="row mb-3 text-center">
+    <div class="col-md-12 themed-grid-col">
+      <div class="container text-center ">
+        <span>Dados Pessoais</span>
+        <hr>
+        <div class="row" style="padding-bottom: 10px; text-align: left;">
+          <div class="col form-floating">
+            <input type="text" class="form-control" id="inputNome" placeholder="Nome" formControlName="nome">
+            <label class="labelInput" for="inputNome">Nome Ministério</label>
+            <div *ngIf="form.get('nome').hasError('required') && form.get('nome').touched" style="color: #f75353;">
+              Campo obrigatório.
+            </div>
+          </div>
+          <div class="col form-floating">
+            <input type="text" class="form-control" id="inputRolPastor" placeholder="ROL Pastor"
+                   formControlName="membro_id" (change)="buscarMembro()">
+            <label class="labelInput" for="inputRolPastor">ROL Pastor</label>
+            <div *ngIf="form.get('membro_id').hasError('required') && form.get('membro_id').touched"
+                 style="color: #f75353;">
+              Campo obrigatório.
+            </div>
+          </div>
+          <div class="col form-floating">
+            <input type="text" class="form-control" id="inputPastor" placeholder="Pastor"
+                   formControlName="pastor" disabled>
+            <label class="labelInput" for="inputPastor">Pastor</label>
+            <div *ngIf="form.get('pastor').hasError('required') && form.get('pastor').touched"
+                 style="color: #f75353;">
+              Campo obrigatório.
+            </div>
+          </div>
+          <div class="col form-floating">
+            <input type="text" class="form-control" id="inputCnpj" placeholder="CNPJ"
+                   formControlName="cnpj">
+            <label class="labelInput" for="inputCnpj">CNPJ</label>
+            <div *ngIf="form.get('cnpj').hasError('required') && form.get('cnpj').touched"
+                 style="color: #f75353;">
+              Campo obrigatório.
+            </div>
+          </div>
+          <div class="col form-floating">
+            <input type="text" class="form-control" id="inputEmail" placeholder="Email"
+                   formControlName="email">
+            <label class="labelInput" for="inputEmail">Email</label>
+            <div *ngIf="form.get('email').hasError('required') && form.get('email').touched"
+                 style="color: #f75353;">
+              Campo obrigatório.
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style="padding-bottom: 10px; text-align: left;">
+          <div class="col form-floating">
+            <input type="text" class="form-control" id="inputFiliacao" placeholder="Filiacao" formControlName="filiacao">
+            <label class="labelInput" for="inputFiliacao">Filiação</label>
+            <div *ngIf="form.get('filiacao').hasError('required') && form.get('filiacao').touched" style="color: #f75353;">
+              Campo obrigatório.
+            </div>
+          </div>
+          <div class="col form-floating">
+            <input type="date" class="form-control" id="inputFundacao" placeholder="Fundação" formControlName="fundacao">
+            <label class="labelInput" for="inputFundacao">Fundação</label>
+            <div *ngIf="form.get('fundacao').hasError('required') && form.get('fundacao').touched" style="color: #f75353;">
+              Campo obrigatório.
+            </div>
+          </div>
+<!--          <div class="col form-floating">-->
+<!--            <select class="form-select" aria-label="Sexo" formControlName="sexo">-->
+<!--              <option value="" disabled>Selecione...</option>-->
+<!--              <option value="M">Masculino</option>-->
+<!--              <option value="F">Feminino</option>-->
+<!--            </select>-->
+<!--            <label class="labelInput" for="inputRg">Sexo</label>-->
+<!--            <div *ngIf="form.get('sexo').hasError('required') && form.get('sexo').touched" style="color: #f75353;">-->
+<!--              Campo obrigatório.-->
+<!--            </div>-->
+<!--          </div>-->
+          <div class="col col-md-2 form-floating">
+            <input type="text" class="form-control" id="inputDdd" placeholder="DDD" formControlName="ddd">
+            <label class="labelInput" for="inputDdd">DDD</label>
+            <div *ngIf="form.get('ddd').hasError('required') && form.get('ddd').touched" style="color: #f75353;">
+              Campo obrigatório.
+            </div>
+          </div>
+          <div class="col form-floating">
+            <input type="text" class="form-control" id="inputTelefone" placeholder="Telefone" formControlName="telefone">
+            <label class="labelInput" for="inputTelefone">Telefone</label>
+            <div *ngIf="form.get('telefone').hasError('required') && form.get('telefone').touched" style="color: #f75353;">
+              Campo obrigatório.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-3 text-center">
+    <div class="container text-center">
+      Dados Ministeriais
+      <hr>
+      <div class="row" style="padding-bottom: 10px;">
+        <div class="col">
+          <div class="col form-floating">
+            <input type="text" class="form-control" id="inputEndereco" placeholder="Endereço" formControlName="endereco">
+            <label class="labelInput" for="inputEndereco">Endereco</label>
+            <div *ngIf="form.get('endereco').hasError('required') && form.get('endereco').touched" style="color: #f75353;">
+              Campo obrigatório.
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-floating">
+            <select class="form-select" aria-label="Default select example" formControlName="situacao_id" id="floatingSituacao">
+              <option value="" disabled>Selecione...</option>
+              <option *ngFor="let situacao of situacaoModel" [value]="situacao.id">{{ situacao.nome }}</option>
+            </select>
+            <label for="floatingSituacao">Situação</label>
+            <div *ngIf="form.get('situacao_id').hasError('required') && form.get('situacao_id').touched" style="color: #f75353;">
+              Campo obrigatório.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: 20px; text-align: right;">
+    <button type="submit" class="btn btn-primary" style="margin-right: 10px;">Salvar</button>
+  </div>
+</form>

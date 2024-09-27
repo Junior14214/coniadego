@@ -1,0 +1,51 @@
+@font-face {
+    font-family: Poppins-Bold;
+    src: url('../../assets/fonts/poppins/Poppins-Bold.ttf');
+}
+
+.container-login100 {
+    width: 100%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    padding: 15px;
+    background: #9053c7;
+    background: -webkit-linear-gradient(-135deg, #93a5fd, #4158d0);
+    background: -o-linear-gradient(-135deg, #93a5fd, #4158d0);
+    background: -moz-linear-gradient(-135deg, #93a5fd, #4158d0);
+    background: linear-gradient(-135deg, #93a5fd, #4158d0);
+}
+
+.wrap-login100 {
+    width: 960px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 177px 130px 33px 95px;
+}
+
+.teste {
+    background: -webkit-linear-gradient(-135deg, #008bfd, #008bfd);
+    background: -o-linear-gradient(-135deg, #008bfd, #008bfd);
+    background: -moz-linear-gradient(-135deg, #008bfd, #008bfd);
+    background: linear-gradient(-135deg, #008bfd, #008bfd);
+}
+
+.sidebar {
+    height: 93vh;
+}
+
+.active {
+    background-color: #fff !important;
+    color: #4b4b4b !important;
+    font-weight: bold;
+}

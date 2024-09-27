@@ -1,0 +1,120 @@
+<!-- Conteúdo Principal -->
+<div class="container-fluid" *ngIf="exibeMenu">
+    <div class="row" style="background-color: #f7f7f7;">
+
+        <button class="btn btn-primary menuMobile" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"></button>
+
+        <div class="offcanvas offcanvas-start menuMobile" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <p>Try scrolling the rest of the page to see this option in action.</p>
+            </div>
+        </div>
+
+        <!-- Menu Lateral -->
+        <div class="d-flex flex-column flex-shrink-0 p-3 bg-light teste" style="width: 242px; height: 100vh;">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+                <span class="fs-4 link-light" style="font-family: Poppins-Bold;">CONIADEGO</span>
+            </a>
+            <hr style="color: #fff;">
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link link-light" [ngClass]="{'active' : abaAtiva == 1}" aria-current="page">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg> Home
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link link-light" [ngClass]="{'active' : abaAtiva == 2 || abaAtiva == 3}" aria-current="page" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="cursor: pointer;">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg> Cadastros
+                    </a>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <ul class="nav" style="padding-left: 50px">
+                                <li class="nav-item link-light" [ngClass]="{'active-sub' : abaAtiva == 2}" style=" padding-left: 10px; cursor: pointer; " [routerLink]="[ '/cadastro/membros'] " (click)="abaAtiva=2 ">
+                                    Cadastro de Membros
+                                </li>
+                                <li class="nav-item link-light " style="padding-left: 10px; padding-top: 10px; cursor: pointer; " [ngClass]="{'active-sub' : abaAtiva == 3}" [routerLink]="[ '/cadastro/ministerios']" (click)="abaAtiva=3 ">
+                                    Cadastro de Ministério
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="nav-link link-light" [ngClass]="{'active' : abaAtiva == 4 || abaAtiva == 5 || abaAtiva == 6}" aria-current="page" data-bs-toggle="collapse" data-bs-target="#collapseFor" aria-expanded="false" aria-controls="collapseTwo" style="cursor: pointer;">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg> Consultas
+                    </a>
+                    <div id="collapseFor" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <ul class="nav" style="padding-left: 50px">
+                                <li class="nav-item link-light" [ngClass]="{'active-sub' : abaAtiva == 5}" style=" padding-left: 10px; cursor: pointer; " [routerLink]="[ '/consultas/membros'] " (click)="abaAtiva=5 ">
+                                    Consulta de Membros
+                                </li>
+                                <li class="nav-item link-light " style="padding-left: 10px; padding-top: 10px; cursor: pointer; " [ngClass]="{'active-sub' : abaAtiva == 6}" style=" padding-left: 10px; cursor: pointer; " [routerLink]="[ '/consultas/ministerios'] " (click)="abaAtiva=6" >
+                                    Consulta de Ministérios
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="nav-link link-light" [ngClass]="{'active' : abaAtiva == 7}" aria-current="page" data-bs-toggle="collapse" data-bs-target="#collapseTree" aria-expanded="false" aria-controls="collapseTwo" style="cursor: pointer;">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg> Financeiro
+                    </a>
+                    <div id="collapseTree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <ul class="nav" style="padding-left: 50px">
+                                <li class="nav-item link-light" [ngClass]="{'active-sub' : abaAtiva == 8}" style=" padding-left: 10px; cursor: pointer; " [routerLink]="[ '/cadastro/membros'] " (click)="abaAtiva=3">
+                                    Entradas / Saídas
+                                </li>
+                                <li class="nav-item link-light " style="padding-left: 10px; padding-top: 10px; cursor: pointer; ">
+                                    Anuidade
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="# " class="nav-link link-light ">
+                        <svg class="bi me-2 " width="16 " height="16 "><use xlink:href="#grid "></use></svg> Relatórios
+                    </a>
+                </li>
+                <li>
+                    <a href="# " class="nav-link link-light ">
+                        <svg class="bi me-2 " width="16 " height="16 "><use xlink:href="#people-circle "></use></svg> Customers
+                    </a>
+                </li>
+            </ul>
+
+            <div class="dropdown" style="padding: 10px; border-radius: 10px; background-color: #fff; ">
+                <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                    <strong>Ailon Junior</strong>
+                </a>
+                <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+                    <li><a class="dropdown-item" href="#">New project...</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item " (click)="logout() ">Sair</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Conteúdo Principal -->
+        <main role="main " class="col-md-10 ml-sm-auto col-lg-10 px-4">
+            <router-outlet></router-outlet>
+        </main>
+
+    </div>
+</div>
+
+<div *ngIf="!exibeMenu">
+    <router-outlet></router-outlet>
+</div>
